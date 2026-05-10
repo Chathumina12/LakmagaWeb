@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download supporting resources, documentation, and materials for the Lakmaga VR Educational Platform research project.">
+    <title>Lakmaga | Downloads & Resources</title>
+
+    <!-- Google Fonts -->
+    <link rel="icon" href="assets/images/icon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 10rem 10% 4rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Resource Card */
+        .resource-card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem 2rem 2rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Gradient top bar */
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Shimmer sweep effect */
+        .resource-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: all 0.8s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .resource-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+
+        .resource-card:hover::after {
+            left: 200%;
+        }
+
+        /* Card icon area */
+        .resource-card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .resource-card:hover .resource-card-icon {
+            transform: scale(1.1) translateY(-3px);
+        }
+
+        /* Icon color variations per resource type */
+        .resource-card-icon.poster {
+            background: rgba(255, 107, 107, 0.12);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+        }
+        .resource-card-icon.research {
+            background: rgba(78, 205, 196, 0.12);
+            color: #4ecdc4;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+        }
+        .resource-card-icon.slides {
+            background: rgba(255, 184, 77, 0.12);
+            color: #ffb84d;
+            border: 1px solid rgba(255, 184, 77, 0.2);
+        }
+        .resource-card-icon.manual {
+            background: rgba(162, 155, 254, 0.12);
+            color: #a29bfe;
+            border: 1px solid rgba(162, 155, 254, 0.2);
+        }
+        .resource-card-icon.technical {
+            background: rgba(108, 92, 231, 0.12);
+            color: #6c5ce7;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+        }
+        .resource-card-icon.github {
+            background: rgba(255, 255, 255, 0.08);
+            color: #f0f0f0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .resource-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .resource-card .resource-type {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .resource-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex-grow: 1;
+            margin-bottom: 2rem;
+        }
+
+        /* Card meta info */
+        .resource-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .resource-meta span i {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        /* Download button */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-download.primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(166, 75, 42, 0.3);
+        }
+
+        .btn-download.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(166, 75, 42, 0.5);
+        }
+
+        .btn-download.github-btn {
+            background: linear-gradient(135deg, #333, #1a1a1a);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-download.github-btn:hover {
+            background: linear-gradient(135deg, #444, #222);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Quick Access CTA Section */
+        .quick-access {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .quick-access h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-access p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .quick-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .quick-links a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .quick-links a i {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background glowing orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/icon.jpg" alt="Lakmaga Logo">
+                <span>Lakmaga<span class="dot">.</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle">Project <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#features" class="dropdown-item"><i class="ph ph-star"></i> Features</a>
+                        <a href="index.html#tech" class="dropdown-item"><i class="ph ph-cpu"></i> Technologies</a>
+                        <a href="index.html#gallery" class="dropdown-item"><i class="ph ph-image"></i> Gallery</a>
+                        <a href="index.html#impact" class="dropdown-item"><i class="ph ph-trend-up"></i> Impact</a>
+                    </div>
+                </div>
+                <a href="domain.html" class="nav-link">Domain</a>
+                <a href="milestones.html" class="nav-link">Milestones</a>
+                <a href="documents.html" class="nav-link">Documents</a>
+                <a href="presentations.html" class="nav-link">Presentations</a>
+                <a href="downloads.html" class="nav-link active">Downloads</a>
+                <a href="contact.html" class="nav-link nav-btn">Contact Us</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="badge fade-in-up">Resource Repository</div>
+        <h1 class="hero-title fade-in-up delay-1">Downloads & <span class="gradient-text">Resources</span></h1>
+        <p class="hero-subtitle fade-in-up delay-2" style="margin: 0 auto; max-width: 650px;">Access all supporting materials, technical documentation, and presentation assets for the Lakmaga VR educational platform.</p>
+    </header>
+
+    <!-- Resource Grid Section -->
+    <section class="section" style="padding-top: 0; min-height: auto;">
+        <div class="container">
+            <div class="section-header fade-in-up" style="text-align: left; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 2rem;">Project <span class="gradient-text">Resources</span></h2>
+                <p class="section-desc" style="margin: 0.5rem 0 0; text-align: left;">Download official project deliverables and supporting documentation.</p>
+            </div>
+            
+            <div class="resource-grid">
+
+                <!-- 1. Poster / Brochure -->
+                <div class="resource-card fade-in-up delay-1" id="resource-poster">
+                    <div class="resource-card-icon poster">
+                        <i class="ph ph-image-square"></i>
+                    </div>
+                    <div class="resource-type">Marketing Material</div>
+                    <h3>Project Poster / Brochure</h3>
+                    <p>A visually engaging poster summarizing the Lakmaga platform's objectives, architecture, key features, and research impact — designed for academic exhibitions and stakeholder presentations.</p>
+                    <div class="resource-meta">
+                        <span><i class="ph ph-file-pdf"></i> PDF</span>
+                        <span><i class="ph ph-calendar-blank"></i> 2026</span>
+                    </div>
+                    <a href="assets/documents/Research%20Paper.pdf" target="_blank" class="btn-download primary" download>
+                        <i class="ph ph-download-simple"></i> Download Poster
+                    </a>
+                </div>
+
+                <!-- 2. Research Abstract -->
+                <div class="resource-card fade-in-up delay-2" id="resource-abstract">
+                    <div class="resource-card-icon research">
+                        <i class="ph ph-article"></i>
+                    </div>
+                    <div class="resource-type">Academic Document</div>
+                    <h3>Research Abstract</h3>
+                    <p>A concise academic abstract outlining the research problem, methodology, key findings, and conclusions from the Lakmaga gamified VR educational platform study.</p>
+                    <div class="resource-meta">
+                        <span><i class="ph ph-file-pdf"></i> PDF</span>
+                        <span><i class="ph ph-calendar-blank"></i> 2026</span>
+                    </div>
+                    <a href="assets/documents/Research%20Paper.pdf" target="_blank" class="btn-download primary" download>
+                        <i class="ph ph-download-simple"></i> Download Abstract
+                    </a>
+                </div>
+
+                <!-- 3. Presentation Slides -->
+                <div class="resource-card fade-in-up delay-3" id="resource-slides">
+                    <div class="resource-card-icon slides">
+                        <i class="ph ph-presentation-chart"></i>
+                    </div>
+                    <div class="resource-type">Slide Deck</div>
+                    <h3>Presentation Slides</h3>
+                    <p>Complete presentation slide decks used for academic evaluations — covering the proposal defense, progress reviews, and implementation milestones with visual data and screenshots.</p>
+                    <div class="resource-meta">
+                        <span><i class="ph ph-file-pdf"></i> PDF</span>
+                        <span><i class="ph ph-stack"></i> 3 Decks</span>
+                    </div>
+                    <a href="presentations.html" class="btn-download primary">
+                        <i class="ph ph-arrow-square-out"></i> View All Slides
+                    </a>
+                </div>
+
+                <!-- 4. User Manual -->
+                <div class="resource-card fade-in-up delay-1" id="resource-manual">
+                    <div class="resource-card-icon manual">
+                        <i class="ph ph-book-open-text"></i>
+                    </div>
+                    <div class="resource-type">User Guide</div>
+                    <h3>User Manual</h3>
+                    <p>A step-by-step user guide covering Meta Quest 3 setup, VR environment navigation, task interaction mechanics, and educator dashboard usage for the Lakmaga platform.</p>
+                    <div class="resource-meta">
+                        <span><i class="ph ph-file-pdf"></i> PDF</span>
+                        <span><i class="ph ph-users"></i> Students & Teachers</span>
+                    </div>
+                    <a href="assets/documents/Project%20Charter(TAF).pdf" target="_blank" class="btn-download primary" download>
+                        <i class="ph ph-download-simple"></i> Download Manual
+                    </a>
+                </div>
+
+                <!-- 5. Technical Documentation -->
+                <div class="resource-card fade-in-up delay-2" id="resource-techdocs">
+                    <div class="resource-card-icon technical">
+                        <i class="ph ph-code"></i>
+                    </div>
+                    <div class="resource-type">Technical Docs</div>
+                    <h3>Technical Documentation</h3>
+                    <p>Comprehensive technical documentation covering system architecture, Unity project structure, XR Interaction Toolkit integration, telemetry pipeline, and deployment procedures.</p>
+                    <div class="resource-meta">
+                        <span><i class="ph ph-file-pdf"></i> PDF</span>
+                        <span><i class="ph ph-gear"></i> Developer Guide</span>
+                    </div>
+                    <a href="documents.html" class="btn-download primary">
+                        <i class="ph ph-arrow-square-out"></i> View Documentation
+                    </a>
+                </div>
+
+                <!-- 6. GitHub Repository -->
+                <div class="resource-card fade-in-up delay-3" id="resource-github">
+                    <div class="resource-card-icon github">
+                        <i class="ph ph-github-logo"></i>
+                    </div>
+                    <div class="resource-type">Source Code</div>
+                    <h3>GitHub Repository</h3>
+                    <p>Access the open-source codebase for the Lakmaga platform. Explore Unity scripts, scene configurations, XR interaction logic, and contribute to the project's ongoing development.</p>
+                    <div class="resource-meta">
+                        <span><i class="ph ph-git-branch"></i> Main Branch</span>
+                        <span><i class="ph ph-star"></i> Open Source</span>
+                    </div>
+                    <a href="https://github.com/InteractiveMediaGD" target="_blank" rel="noopener noreferrer" class="btn-download github-btn">
+                        <i class="ph ph-github-logo"></i> View on GitHub
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access / Additional Links -->
+    <section class="section section-darker" style="min-height: auto;">
+        <div class="container">
+            <div class="quick-access fade-in-up">
+                <h2>Need Something <span class="gradient-text">Specific?</span></h2>
+                <p>Jump directly to the section you need from any part of our digital profile.</p>
+                <div class="quick-links">
+                    <a href="index.html"><i class="ph ph-house"></i> Home</a>
+                    <a href="about.html"><i class="ph ph-users-three"></i> Team</a>
+                    <a href="domain.html"><i class="ph ph-magnifying-glass"></i> Research Domain</a>
+                    <a href="milestones.html"><i class="ph ph-flag-banner"></i> Milestones</a>
+                    <a href="documents.html"><i class="ph ph-files"></i> Documents</a>
+                    <a href="presentations.html"><i class="ph ph-projector-screen-chart"></i> Presentations</a>
+                    <a href="contact.html"><i class="ph ph-envelope"></i> Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/images/icon.jpg" alt="Lakmaga Logo">
+                    <span>Lakmaga.</span>
+                </div>
+                <p class="footer-tagline">A Gamified VR Educational Platform for Middle School Curriculum in Sri Lanka.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="domain.html">Domain</a>
+                <a href="downloads.html">Downloads</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Resources</h4>
+                <a href="documents.html">Documents</a>
+                <a href="presentations.html">Presentations</a>
+                <a href="milestones.html">Milestones</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://github.com/InteractiveMediaGD" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                    <a href="mailto:chamikaharsha2001@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lakmaga Research Project — SLIIT. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Apply tilt effect for resource cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.resource-card');
+            items.forEach(card => card.classList.add('impact-card'));
+        });
+    </script>
+</body>
+</html>

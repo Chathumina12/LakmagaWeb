@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakmaga | Presentations</title>
+
+    <!-- Google Fonts -->
+    <link rel="icon" href="assets/images/icon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 10rem 10% 4rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .presentations-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+        
+        .presentation-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            transition: var(--transition);
+            gap: 2rem;
+        }
+
+        .presentation-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .presentation-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            background: rgba(255, 184, 77, 0.1);
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 184, 77, 0.2);
+        }
+
+        .presentation-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .presentation-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .presentation-info p {
+            margin-bottom: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .presentation-actions {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .btn-doc {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* Upcoming / Disabled styles */
+        .presentation-card.locked {
+            opacity: 0.6;
+            border-style: dashed;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .presentation-card.locked .presentation-icon {
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .presentation-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            .presentation-actions {
+                width: 100%;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Background glowing orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/icon.jpg" alt="Lakmaga Logo">
+                <span>Lakmaga<span class="dot">.</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle">Project <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#features" class="dropdown-item"><i class="ph ph-star"></i> Features</a>
+                        <a href="index.html#tech" class="dropdown-item"><i class="ph ph-cpu"></i> Technologies</a>
+                        <a href="index.html#gallery" class="dropdown-item"><i class="ph ph-image"></i> Gallery</a>
+                        <a href="index.html#impact" class="dropdown-item"><i class="ph ph-trend-up"></i> Impact</a>
+                    </div>
+                </div>
+                <a href="domain.html" class="nav-link">Domain</a>
+                <a href="milestones.html" class="nav-link">Milestones</a>
+                <a href="documents.html" class="nav-link">Documents</a>
+                <a href="presentations.html" class="nav-link active">Presentations</a>
+                <a href="downloads.html" class="nav-link">Downloads</a>
+                <a href="contact.html" class="nav-link nav-btn">Contact Us</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="badge fade-in-up">Slide Decks</div>
+        <h1 class="hero-title fade-in-up delay-1">Evaluation <span class="gradient-text">Presentations</span></h1>
+        <p class="hero-subtitle fade-in-up delay-2" style="margin: 0 auto; max-width: 600px;">Review our visual pitch decks and progress updates delivered to the academic evaluation committee.</p>
+    </header>
+
+    <!-- Primary Presentations Section -->
+    <section class="section" style="padding-top: 0; min-height: auto;">
+        <div class="container">
+            <div class="section-header fade-in-up" style="text-align: left; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem;">Available <span class="gradient-text">Slides</span></h2>
+            </div>
+            
+            <div class="presentations-grid">
+                
+                <!-- Presentation 1 -->
+                <div class="presentation-card fade-in-up delay-1">
+                    <div class="presentation-icon">
+                        <i class="ph ph-presentation-chart"></i>
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Proposal Presentation</h3>
+                        <p>The initial concept pitch defending the academic problem domain, methodology, and viability of building a VR ecosystem mapped to Sri Lanka's syllabus.</p>
+                    </div>
+                    <div class="presentation-actions">
+                        <a href="assets/documents/Proposal%20Presentation.pdf" target="_blank" class="btn btn-primary btn-doc">
+                            <i class="ph ph-download-simple"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Presentation 2 -->
+                <div class="presentation-card fade-in-up delay-2">
+                    <div class="presentation-icon">
+                        <i class="ph ph-chart-line-up"></i>
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Progress Presentation 1</h3>
+                        <p>Detailed insight into the system architecture, early UI design sketches, establishing the Unity 3D core environments, and preliminary problem resolutions.</p>
+                    </div>
+                    <div class="presentation-actions">
+                        <a href="assets/documents/Progress%20Presentation%201.pdf" target="_blank" class="btn btn-primary btn-doc">
+                            <i class="ph ph-download-simple"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Presentation 3 -->
+                <div class="presentation-card fade-in-up delay-3">
+                    <div class="presentation-icon">
+                        <i class="ph ph-chart-polar"></i>
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Progress Presentation 2</h3>
+                        <p>Deep dive into implementation progress, physical Meta Quest 3 test results, telemetry datamining, and showcasing near-final curriculum learning modules.</p>
+                    </div>
+                    <div class="presentation-actions">
+                        <a href="assets/documents/Progress%20Presentation%202.pdf" target="_blank" class="btn btn-primary btn-doc">
+                            <i class="ph ph-download-simple"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Presentations Section -->
+    <section class="section section-darker" style="min-height: auto;">
+        <div class="container">
+            <div class="section-header fade-in-up" style="text-align: left; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem;">Upcoming <span style="color: var(--text-muted);">Defense</span></h2>
+            </div>
+            
+            <div class="presentations-grid">
+                
+                <!-- Upcoming Presentation -->
+                <div class="presentation-card locked fade-in-up delay-1">
+                    <div class="presentation-icon">
+                        <i class="ph ph-lock-key"></i>
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Final Presentation</h3>
+                        <p>The ultimate research aggregation covering performance improvements, finalized UI/UX, and comprehensive testing summaries for the Viva evaluation.</p>
+                    </div>
+                    <div class="presentation-actions">
+                        <button class="btn btn-outline btn-doc disabled" disabled>
+                            <i class="ph ph-clock"></i> Available Post-Defense
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/images/icon.jpg" alt="Lakmaga Logo">
+                    <span>Lakmaga.</span>
+                </div>
+                <p class="footer-tagline">A Gamified VR Educational Platform for Middle School Curriculum in Sri Lanka.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="domain.html">Domain</a>
+                <a href="downloads.html">Downloads</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Resources</h4>
+                <a href="documents.html">Documents</a>
+                <a href="presentations.html">Presentations</a>
+                <a href="milestones.html">Milestones</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://github.com/InteractiveMediaGD" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                    <a href="mailto:chamikaharsha2001@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lakmaga Research Project — SLIIT. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Apply tilt effect specifically for presentation-cards 
+        // to inherit the VR aesthetic from script.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.presentation-card:not(.locked)');
+            items.forEach(card => card.classList.add('impact-card')); // Reusing the established class handles from script.js
+        });
+    </script>
+</body>
+</html>

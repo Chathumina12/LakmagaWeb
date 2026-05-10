@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lakmaga: A Gamified VR Educational Platform for Middle School Curriculum in Sri Lanka.">
+<title>Lakmaga | VR Educational Platform</title>
+<link rel="icon" href="assets/images/icon.jpg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="stylesheet" href="css/redesign-core.css">
+<link rel="stylesheet" href="css/redesign-sections.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+<div id="scrollProgress"></div>
+
+<!-- Side Navigation -->
+<nav class="side-nav">
+<a href="#hero"><span class="label">Identity</span><span class="dot"></span></a>
+<a href="#problem"><span class="label">Problem</span><span class="dot"></span></a>
+<a href="#solution"><span class="label">Solution</span><span class="dot"></span></a>
+<a href="#gallery"><span class="label">Gallery</span><span class="dot"></span></a>
+<a href="#demo"><span class="label">Demo</span><span class="dot"></span></a>
+<a href="#research"><span class="label">Research</span><span class="dot"></span></a>
+<a href="#future"><span class="label">Future</span><span class="dot"></span></a>
+<a href="#vault"><span class="label">Resources</span><span class="dot"></span></a>
+</nav>
+
+<!-- Top Nav -->
+<nav class="top-nav">
+<a href="#hero" class="logo"><img src="assets/images/icon.jpg" alt="Lakmaga Logo"><span>Lakmaga<span class="dot">.</span></span></a>
+<div class="nav-links">
+<a href="#hero">Home</a>
+<a href="#problem">Problem</a>
+<a href="#solution">Solution</a>
+<a href="#gallery">Gallery</a>
+<a href="#demo">Demo</a>
+<a href="#research">Research</a>
+<a href="#future">Future</a>
+<a href="#vault">Resources</a>
+<a href="#team">Team</a>
+<a href="#contact" class="nav-btn">Contact</a>
+</div>
+<div class="menu-toggle"><i class="ph ph-list"></i></div>
+</nav>
+
+<!-- SECTION 1: HERO — Project Identity -->
+<section id="hero" class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="logo-emblem"><img src="assets/images/icon.jpg" alt="Lakmaga Emblem"></div>
+<div class="badge" data-reveal>Research Project 2026</div>
+<h1 data-reveal>Lak<span class="gradient-text">maga</span></h1>
+<p class="tagline" data-typewriter="A Gamified VR Educational Platform for Middle School Curriculum in Sri Lanka."></p>
+<div class="hero-actions" data-reveal>
+<a href="#problem" class="btn btn-primary">Explore the Research <i class="ph ph-arrow-down"></i></a>
+<a href="#vault" class="btn btn-outline">Download Resources</a>
+</div>
+<div class="hero-stats" data-reveal>
+<div class="stat"><i class="ph ph-graduation-cap"></i><span>STEM Focus</span></div>
+<div class="stat"><i class="ph ph-game-controller"></i><span>Gamified</span></div>
+<div class="stat"><i class="ph ph-goggles"></i><span>Meta Quest 3</span></div>
+<div class="stat"><i class="ph ph-cube"></i><span>Unity 3D</span></div>
+</div>
+</div>
+<div class="scroll-hint"><span>SCROLL</span><div class="line"></div></div>
+</section>
+
+<!-- SECTION 2: PROBLEM & NEED -->
+<section id="problem" class="section section-darker problem-section">
+<div class="container grid-asym">
+<div data-reveal="left">
+<span class="mono">02 — The Problem</span>
+<div class="divider-left" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:2rem">Why This <span class="gradient-text">Matters</span></h2>
+<div class="pull-quote">Students in Sri Lanka face difficulties in understanding abstract STEM concepts due to limited access to practical learning environments and an over-reliance on traditional teaching methods.</div>
+</div>
+<div data-stagger>
+<div class="gap-card"><div class="icon"><i class="ph ph-book-open"></i></div><h4>Rote-Based Learning</h4><p>Over-reliance on memorization leaves students unable to apply scientific concepts practically.</p></div>
+<div class="gap-card" style="margin-top:1.5rem"><div class="icon"><i class="ph ph-globe-hemisphere-east"></i></div><h4>No Local Context</h4><p>Existing VR tools are built on Western curricula with zero cultural relevance to Sri Lankan students.</p></div>
+<div class="gap-card" style="margin-top:1.5rem"><div class="icon"><i class="ph ph-wifi-slash"></i></div><h4>Access Barriers</h4><p>Rural schools lack lab equipment and internet access needed for modern interactive STEM education.</p></div>
+<div class="gap-card" style="margin-top:1.5rem"><div class="icon"><i class="ph ph-chart-line-down"></i></div><h4>Declining Interest</h4><p>Student engagement with STEM drops by 35% in middle school years due to abstract, disconnected curricula.</p></div>
+</div>
+</div>
+<div class="container" style="margin-top:3rem">
+<div class="stat-ticker" data-reveal>
+<div class="tick"><span class="num gradient-text"><span class="counter" data-target="90" data-suffix="%">0</span></span><span class="label">Classification Accuracy</span></div>
+<div class="tick"><span class="num gradient-text"><span class="counter" data-target="72" data-suffix=" FPS">0</span></span><span class="label">Stable Performance</span></div>
+<div class="tick"><span class="num gradient-text"><span class="counter" data-target="40" data-suffix="%">0</span></span><span class="label">Retention Improvement</span></div>
+<div class="tick"><span class="num gradient-text"><span class="counter" data-target="85" data-suffix="%">0</span></span><span class="label">Student Engagement</span></div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 3: SOLUTION OVERVIEW -->
+<section id="solution" class="section solution-section">
+<div class="container">
+<div style="text-align:center;margin-bottom:3rem" data-reveal>
+<span class="mono">03 — The Solution</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">How Lakmaga <span class="gradient-text">Works</span></h2>
+<p style="color:var(--muted);max-width:600px;margin:1rem auto 0">A seamless educational pipeline from headset to classroom analytics.</p>
+</div>
+<div class="solution-wrapper">
+<div class="solution-sidebar">
+<div class="step-counter">
+<div class="step-dot active"><span class="num">1</span><span>Enter VR</span></div>
+<div class="step-dot"><span class="num">2</span><span>Interact</span></div>
+<div class="step-dot"><span class="num">3</span><span>Feedback</span></div>
+<div class="step-dot"><span class="num">4</span><span>Analytics</span></div>
+</div>
+</div>
+<div class="solution-steps">
+<div class="solution-step" data-reveal><div class="step-num">STEP 01</div><h3>Enter the VR Environment</h3><p>Students equip the Meta Quest 3 headset and are instantly transported into a historically reconstructed ancient Sigiriya village. The environment is designed with archaeological accuracy and serves as the contextual backdrop for all STEM learning modules.</p></div>
+<div class="solution-step" data-reveal><div class="step-num">STEP 02</div><h3>Interact with STEM Tasks</h3><p>Engage physically with 3D objects to solve curriculum-aligned puzzles. From calculating irrigation flow rates at the sluice gates to balancing merchant scales using algebraic equations, every task maps directly to national syllabus objectives.</p></div>
+<div class="solution-step" data-reveal><div class="step-num">STEP 03</div><h3>Receive Real-Time Feedback</h3><p>The gamification engine provides immediate in-world responses. Correct answers trigger visual rewards and progression. Mistakes generate guided hints, not punishments, fostering a growth mindset and reducing math anxiety.</p></div>
+<div class="solution-step" data-reveal><div class="step-num">STEP 04</div><h3>Performance Telemetry</h3><p>A passive telemetry system tracks every interaction without disrupting the learning flow. Educators receive detailed dashboards showing task completion rates, time-on-task, error patterns, and individual student struggle points.</p></div>
+</div>
+</div>
+<div class="tech-bar" data-reveal>
+<div class="tech-pill"><i class="ph ph-cube"></i>Unity 3D</div>
+<div class="tech-pill"><i class="ph ph-goggles"></i>Meta Quest 3</div>
+<div class="tech-pill"><i class="ph ph-pencil-line"></i>Blender</div>
+<div class="tech-pill"><i class="ph ph-hand-swipe-right"></i>XR Interaction Toolkit</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 4: VISUAL GALLERY -->
+<section id="gallery" class="section section-darker">
+<div class="container">
+<div style="margin-bottom:3rem" data-reveal>
+<span class="mono">04 — Visual Showcase</span>
+<div class="divider-left" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">Testing <span class="gradient-text">Gallery</span></h2>
+<p style="color:var(--muted);max-width:500px;margin-top:0.5rem">Screenshots and footage from VR testing sessions, gameplay interactions, and development progress.</p>
+</div>
+<div class="masonry-item" data-src="assets/video/Testing.mp4" data-type="video"><video src="assets/video/Testing.mp4" muted loop playsinline preload="none" poster="assets/images/test3.jpeg"></video><div class="masonry-caption"><span>VR Testing Session</span></div></div>
+<div class="masonry-item" data-src="assets/images/test1.jpg" data-type="image"><img src="assets/images/test1.jpg" alt="Testing 1" loading="lazy"><div class="masonry-caption"><span>Environment Testing</span></div></div>
+<div class="masonry-item" data-src="assets/images/test2.JPG" data-type="image"><img src="assets/images/test2.JPG" alt="Testing 2" loading="lazy"><div class="masonry-caption"><span>User Interaction</span></div></div>
+<div class="masonry-item" data-src="assets/images/test3.jpeg" data-type="image"><img src="assets/images/test3.jpeg" alt="Testing 3" loading="lazy"><div class="masonry-caption"><span>Gameplay Capture</span></div></div>
+<div class="masonry-item" data-src="assets/images/test4.jpeg" data-type="image"><img src="assets/images/test4.jpeg" alt="Testing 4" loading="lazy"><div class="masonry-caption"><span>STEM Module</span></div></div>
+<div class="masonry-item" data-src="assets/images/test5.jpeg" data-type="image"><img src="assets/images/test5.jpeg" alt="Testing 5" loading="lazy"><div class="masonry-caption"><span>Scene Overview</span></div></div>
+<div class="masonry-item" data-src="assets/images/test6.jpeg" data-type="image"><img src="assets/images/test6.jpeg" alt="Testing 6" loading="lazy"><div class="masonry-caption"><span>Village Environment</span></div></div>
+<div class="masonry-item" data-src="assets/images/test7.jpeg" data-type="image"><img src="assets/images/test7.jpeg" alt="Testing 7" loading="lazy"><div class="masonry-caption"><span>Task Interaction</span></div></div>
+<div class="masonry-item" data-src="assets/images/test8.jpg" data-type="image"><img src="assets/images/test8.jpg" alt="Testing 8" loading="lazy"><div class="masonry-caption"><span>Progress Tracking</span></div></div>
+<div class="masonry-item" data-src="assets/images/test9.JPG" data-type="image"><img src="assets/images/test9.JPG" alt="Testing 9" loading="lazy"><div class="masonry-caption"><span>Beta Deployment</span></div></div>
+<div class="masonry-item" data-src="assets/images/test10.jpg" data-type="image"><img src="assets/images/test10.jpg" alt="Testing 10" loading="lazy"><div class="masonry-caption"><span>Classroom Setup</span></div></div>
+<div class="masonry-item" data-src="assets/images/test11.jpeg" data-type="image"><img src="assets/images/test11.jpeg" alt="Testing 11" loading="lazy"><div class="masonry-caption"><span>Student Testing</span></div></div>
+<div class="masonry-item" data-src="assets/images/test12.jpeg" data-type="image"><img src="assets/images/test12.jpeg" alt="Testing 12" loading="lazy"><div class="masonry-caption"><span>Final Build</span></div></div>
+</div>
+</div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox"><span class="lightbox-close">&times;</span><div class="lightbox-inner"></div></div>
+
+<!-- SECTION 5: DEMO / THEATER -->
+<section id="demo" class="section theater-section">
+<div class="container" style="text-align:center">
+<span class="mono" data-reveal>05 — Prototype Demonstration</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:0.5rem" data-reveal>Watch the <span class="gradient-text">Demo</span></h2>
+<p style="color:var(--muted);max-width:550px;margin:0 auto 2.5rem" data-reveal>Experience Lakmaga in action. This demonstration showcases the VR environment, interactive STEM tasks, and real-time feedback systems.</p>
+<div class="video-theater" data-reveal="scale">
+<video src="assets/video/intro.mp4" muted playsinline preload="none" poster="assets/images/hero.png"></video>
+<div class="play-overlay"><div class="play-btn"><i class="ph ph-play-fill"></i></div></div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 6: RESEARCH & VALIDATION -->
+<section id="research" class="section">
+<div class="container">
+<div style="text-align:center;margin-bottom:3rem" data-reveal>
+<span class="mono">06 — Research & Validation</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">Academic <span class="gradient-text">Foundation</span></h2>
+</div>
+<div class="bento-grid">
+<div class="bento-cell" data-reveal><div class="cell-label">Literature Survey</div><h3>Research Background</h3><p>Recent advancements in immersive technologies have demonstrated significant improvements in student engagement and knowledge retention. Virtual reality enables learners to interact with abstract concepts in a spatial environment, reducing cognitive load. However, existing solutions are largely based on Western curricula and lack contextual relevance for Sri Lankan students.</p></div>
+<div class="bento-cell" data-reveal><div class="cell-label">Methodology</div><h3>Design-Based Research</h3><p>The project follows an iterative Design-Based Research approach. The system was developed using Unity 3D and deployed on Meta Quest 3 hardware. Interactive modules were designed based on curriculum mapping and integrated with gamification elements including tasks, rewards, and feedback mechanisms.</p></div>
+<div class="bento-cell" data-reveal><div class="cell-label">Objectives</div><h3>Research Goals</h3><p><strong>1.</strong> Design a gamified VR platform aligned with national curriculum.<br><strong>2.</strong> Improve student engagement through immersive experiences.<br><strong>3.</strong> Enhance conceptual understanding and retention.<br><strong>4.</strong> Provide a culturally relevant educational environment.</p></div>
+<div class="bento-cell" data-reveal><div class="cell-label">Key Findings</div><div class="findings-grid"><div class="finding-stat"><span class="num gradient-text"><span class="counter" data-target="90" data-suffix="%">0</span></span><span class="desc">Task Accuracy</span></div><div class="finding-stat"><span class="num gradient-text"><span class="counter" data-target="72" data-suffix="">0</span></span><span class="desc">Stable FPS</span></div><div class="finding-stat"><span class="num gradient-text"><span class="counter" data-target="40" data-suffix="%">0</span></span><span class="desc">Retention Gain</span></div></div></div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 7: COMMERCIALIZATION / FUTURE -->
+<section id="future" class="section section-darker">
+<div class="container">
+<div style="text-align:center;margin-bottom:3rem" data-reveal>
+<span class="mono">07 — Commercialization & Future</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">Looking <span class="gradient-text">Forward</span></h2>
+<p style="color:var(--muted);max-width:600px;margin:1rem auto 0">Beyond the academic prototype — pathways to real-world deployment and sustainable educational impact.</p>
+</div>
+<div class="future-grid" data-stagger>
+<div class="future-card"><div class="card-icon"><i class="ph ph-buildings"></i></div><h4>Target Institutions</h4><p>Government and private middle schools across Sri Lanka, with initial pilot deployments targeting schools in Western Province and Central Province.</p></div>
+<div class="future-card"><div class="card-icon"><i class="ph ph-chart-line-up"></i></div><h4>Market Relevance</h4><p>The EdTech VR market in South Asia is projected to grow 32% annually. Lakmaga positions itself as the first curriculum-aligned VR platform for Sri Lankan STEM education.</p></div>
+<div class="future-card"><div class="card-icon"><i class="ph ph-rocket-launch"></i></div><h4>Deployment Pathway</h4><p>Phase 1: Pilot testing in 5 partner schools. Phase 2: Ministry of Education integration proposal. Phase 3: Commercial licensing to international schools.</p></div>
+<div class="future-card"><div class="card-icon"><i class="ph ph-leaf"></i></div><h4>Long-Term Sustainability</h4><p>Modular content architecture enables continuous curriculum updates. Subscription-based licensing ensures ongoing development funding and teacher training programs.</p></div>
+</div>
+<div style="text-align:center;margin-top:3rem" data-reveal>
+<a href="assets/documents/Research Paper.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-download-simple"></i> Download Full Research Paper</a>
+</div>
+</div>
+</section>
+
+<!-- SECTION 8: RESOURCE VAULT -->
+<section id="vault" class="section vault-section">
+<div class="container">
+<div style="text-align:center;margin-bottom:3rem" data-reveal>
+<span class="mono">08 — Resource Repository</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">Document <span class="gradient-text">Vault</span></h2>
+<p style="color:var(--muted);max-width:550px;margin:1rem auto 0">Access all supporting materials, documentation, and project assets.</p>
+</div>
+<div class="vault-grid" data-stagger>
+<div class="vault-card"><div class="vault-icon vi-red"><i class="ph ph-image-square"></i></div><div class="vault-type">Marketing Material</div><h4>Project Poster</h4><p>Visually engaging poster summarizing objectives, architecture, and research impact for exhibitions.</p><div class="meta"><span><i class="ph ph-file-pdf"></i> PDF</span><span><i class="ph ph-calendar-blank"></i> 2026</span></div><a href="assets/documents/Research Paper.pdf" target="_blank" class="btn-download gold" download><i class="ph ph-download-simple"></i> Download</a></div>
+<div class="vault-card"><div class="vault-icon vi-teal"><i class="ph ph-article"></i></div><div class="vault-type">Academic Document</div><h4>Research Abstract</h4><p>Concise academic abstract outlining the research problem, methodology, and key findings.</p><div class="meta"><span><i class="ph ph-file-pdf"></i> PDF</span><span><i class="ph ph-calendar-blank"></i> 2026</span></div><a href="assets/documents/Research Paper.pdf" target="_blank" class="btn-download gold" download><i class="ph ph-download-simple"></i> Download</a></div>
+<div class="vault-card"><div class="vault-icon vi-amber"><i class="ph ph-presentation-chart"></i></div><div class="vault-type">Slide Deck</div><h4>Presentation Slides</h4><p>Complete slide decks from proposal defense, progress reviews, and final presentation.</p><div class="meta"><span><i class="ph ph-file-pdf"></i> PDF</span><span><i class="ph ph-stack"></i> 3 Decks</span></div><a href="assets/documents/Proposal Presentation.pdf" target="_blank" class="btn-download gold"><i class="ph ph-arrow-square-out"></i> View Slides</a></div>
+<div class="vault-card"><div class="vault-icon vi-purple"><i class="ph ph-book-open-text"></i></div><div class="vault-type">User Guide</div><h4>User Manual</h4><p>Step-by-step guide covering Meta Quest 3 setup, VR navigation, and educator dashboard usage.</p><div class="meta"><span><i class="ph ph-file-pdf"></i> PDF</span><span><i class="ph ph-users"></i> Students & Teachers</span></div><a href="assets/documents/Project Charter(TAF).pdf" target="_blank" class="btn-download gold" download><i class="ph ph-download-simple"></i> Download</a></div>
+<div class="vault-card"><div class="vault-icon vi-indigo"><i class="ph ph-code"></i></div><div class="vault-type">Technical Docs</div><h4>Technical Documentation</h4><p>System architecture, Unity project structure, XR Toolkit integration, and deployment procedures.</p><div class="meta"><span><i class="ph ph-file-pdf"></i> PDF</span><span><i class="ph ph-gear"></i> Developer Guide</span></div><a href="assets/documents/Dayananda W C R Final report.pdf" target="_blank" class="btn-download gold" download><i class="ph ph-download-simple"></i> Download</a></div>
+<div class="vault-card"><div class="vault-icon vi-white"><i class="ph ph-github-logo"></i></div><div class="vault-type">Source Code</div><h4>GitHub Repository</h4><p>Access the open-source codebase. Explore Unity scripts, scene configs, and XR interaction logic.</p><div class="meta"><span><i class="ph ph-git-branch"></i> Main Branch</span><span><i class="ph ph-star"></i> Open Source</span></div><a href="https://github.com/InteractiveMediaGD" target="_blank" rel="noopener noreferrer" class="btn-download dark"><i class="ph ph-github-logo"></i> View on GitHub</a></div>
+</div>
+</div>
+</section>
+
+<!-- TEAM SECTION -->
+<section id="team" class="section">
+<div class="container">
+<div style="text-align:center;margin-bottom:3rem" data-reveal>
+<span class="mono">The Team</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">Meet the <span class="gradient-text">Researchers</span></h2>
+</div>
+<h3 style="text-align:center;font-size:1.3rem;margin-bottom:2rem;color:var(--muted)" data-reveal>Project Supervisors</h3>
+<div class="team-grid" style="max-width:600px;margin:0 auto 4rem;grid-template-columns:repeat(2,1fr)" data-stagger>
+<div class="team-card"><div class="avatar"><img src="assets/images/Didula.png" alt="Supervisor" loading="lazy"></div><h4>Mr. Didula Chamara</h4><div class="role">Supervisor</div></div>
+<div class="team-card"><div class="avatar"><img src="assets/images/Nushkan.png" alt="Co-supervisor" loading="lazy"></div><h4>Mr. Nushkan Nizmi</h4><div class="role">Co-Supervisor</div></div>
+</div>
+<h3 style="text-align:center;font-size:1.3rem;margin-bottom:2rem;color:var(--muted)" data-reveal>Development Team</h3>
+<div class="team-grid" style="grid-template-columns:repeat(4,1fr)" data-stagger>
+<div class="team-card"><div class="avatar"><img src="assets/images/Dayananda%20W.%20C.%20R.jpeg" alt="Group Leader" loading="lazy"></div><h4>Dayananda W.C.R.</h4><div class="role">Group Leader & Tech Lead</div><div class="email">it22561602@my.sliit.lk</div></div>
+<div class="team-card"><div class="avatar"><img src="assets/images/Wijenarayana%20c.%20H.jpeg" alt="UI/UX Designer" loading="lazy"></div><h4>Wijenarayana C.H</h4><div class="role">UI/UX Designer & Researcher</div><div class="email">it22132314@my.sliit.lk</div></div>
+<div class="team-card"><div class="avatar"><img src="assets/images/Jayalath%20K.%20M.%20K.%20D.jpeg" alt="VR Developer" loading="lazy"></div><h4>Jayalath K.M.K.D</h4><div class="role">VR Engine Developer</div><div class="email">it22581570@my.sliit.lk</div></div>
+<div class="team-card"><div class="avatar"><img src="assets/images/Ubeywarna%20R.%20C.jpeg" alt="Backend Developer" loading="lazy"></div><h4>Ubeywarna R.C</h4><div class="role">Telemetry & Backend Lead</div><div class="email">it22339874@my.sliit.lk</div></div>
+</div>
+</div>
+</section>
+
+<!-- MILESTONES -->
+<section id="milestones" class="section section-darker">
+<div class="container">
+<div style="text-align:center;margin-bottom:3rem" data-reveal>
+<span class="mono">Project Timeline</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">Evaluation <span class="gradient-text">Milestones</span></h2>
+</div>
+<div class="timeline-h" data-stagger>
+<div class="timeline-node"><div class="node-dot completed"></div><div class="node-content"><div class="date">June 2025</div><h4>Project Proposal</h4><p>Concept validation, literature review, and academic committee approval.</p></div></div>
+<div class="timeline-node"><div class="node-dot completed"></div><div class="node-content"><div class="date">October 2025</div><h4>Progress Review 1</h4><p>System architecture, VR pipeline design, and database definitions.</p></div></div>
+<div class="timeline-node"><div class="node-dot active"></div><div class="node-content"><div class="date">February 2026</div><h4>Progress Review 2</h4><p>Beta deployment on Meta Quest 3, curriculum puzzle implementation.</p></div></div>
+<div class="timeline-node"><div class="node-dot"></div><div class="node-content"><div class="date">April 2026</div><h4>Final Assessment</h4><p>Complete system demo with pilot deployment performance statistics.</p></div></div>
+<div class="timeline-node"><div class="node-dot"></div><div class="node-content"><div class="date">May 10, 2026</div><h4>Viva / Final Defense</h4><p>Oral evaluation and formal project defense before the research committee.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<div class="container">
+<div style="text-align:center;margin-bottom:3rem" data-reveal>
+<span class="mono">Get In Touch</span>
+<div class="divider" style="margin-top:1rem"></div>
+<h2 style="font-size:clamp(2rem,4vw,3rem)">Contact <span class="gradient-text">Us</span></h2>
+<p style="color:var(--muted);max-width:600px;margin:1rem auto 0">We welcome inquiries regarding research collaborations, institutional deployments, or feedback from educational practitioners.</p>
+</div>
+<div class="contact-grid" data-reveal>
+<div class="contact-info">
+<div class="contact-item"><i class="ph ph-envelope"></i><div><h4>Email</h4><p>research@lakmaga.edu.lk</p></div></div>
+<div class="contact-item"><i class="ph ph-phone"></i><div><h4>Phone</h4><p>+94 11 234 5678</p></div></div>
+<div class="contact-item"><i class="ph ph-buildings"></i><div><h4>Institution</h4><p>Sri Lanka Institute of Information Technology (SLIIT), Malabe.</p></div></div>
+</div>
+<form class="contact-form" id="contactForm" action="https://formsubmit.co/chamikaharsha2001@gmail.com" method="POST">
+<h3>Send a Message</h3>
+<div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+<div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+<div class="form-group"><textarea name="message" rows="5" placeholder="How can we help?" required></textarea></div>
+<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message <i class="ph ph-paper-plane-right"></i></button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><div class="footer-logo"><img src="assets/images/icon.jpg" alt="Lakmaga"><span>Lakmaga<span style="color:var(--gold)">.</span></span></div><p class="footer-tagline">A Gamified VR Educational Platform for Middle School Curriculum in Sri Lanka.</p></div>
+<div class="footer-nav"><h4>Navigation</h4><a href="#hero">Home</a><a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#gallery">Gallery</a></div>
+<div class="footer-nav"><h4>Resources</h4><a href="#demo">Demo</a><a href="#research">Research</a><a href="#vault">Downloads</a><a href="#contact">Contact</a></div>
+<div class="footer-nav"><h4>Connect</h4><div class="social-links"><a href="https://github.com/InteractiveMediaGD" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a><a href="mailto:chamikaharsha2001@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a></div></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 Lakmaga Research Project &mdash; SLIIT. All rights reserved.</p></div>
+</div>
+</footer>
+
+<!-- Back to Top -->
+<div class="back-to-top"><i class="ph ph-arrow-up"></i></div>
+
+<script src="js/redesign.js"></script>
+</body>
+</html>
