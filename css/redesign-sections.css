@@ -92,6 +92,123 @@
   .step-counter{flex-direction:row}
 }
 
+/* ====== MATHEMATICS TASKS ====== */
+.tasks-section {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
+}
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.task-card {
+  position: relative;
+  padding: 2.5rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all 0.4s var(--ease);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.task-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--bronze));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.task-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+.task-card:hover::before {
+  opacity: 1;
+}
+.task-icon {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+.task-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.task-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-serif);
+}
+.context-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.05);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+  width: fit-content;
+  font-weight: 500;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+.task-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.pedagogy-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--cream);
+}
+.pedagogy-tip i {
+  font-size: 1.1rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+@media (max-width: 900px) {
+  .tasks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .tasks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ====== GALLERY (Section 4 — Grid) ====== */
 .masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 @media(max-width:900px){.masonry{grid-template-columns:repeat(2,1fr)}}

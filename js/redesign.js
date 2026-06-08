@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to({ val: 0 }, {
           val: target, duration: 2, ease: 'power2.out',
           onUpdate: function () {
-            el.textContent = Math.ceil(this.targets()[0].val) + suffix;
+            const current = this.targets()[0].val;
+            el.textContent = (target % 1 === 0 ? Math.ceil(current) : current.toFixed(1)) + suffix;
           }
         });
       },
