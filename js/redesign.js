@@ -144,6 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
       theaterVideo.play();
       playOverlay.classList.add('hidden');
     });
+    theaterVideo.addEventListener('click', () => {
+      if (!theaterVideo.paused) {
+        theaterVideo.pause();
+      } else {
+        theaterVideo.play();
+      }
+    });
     theaterVideo.addEventListener('pause', () => playOverlay.classList.remove('hidden'));
     theaterVideo.addEventListener('ended', () => playOverlay.classList.remove('hidden'));
   }
